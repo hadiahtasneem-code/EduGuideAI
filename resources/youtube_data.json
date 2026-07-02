@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1,
+    "title": "Python Tutorial for Beginners (Full Course)",
+    "channel": "freeCodeCamp.org",
+    "url": "https://www.youtube.com/watch?v=rfscVS0vtbw",
+    "topic": "Python",
+    "difficulty": "Beginner",
+    "duration_minutes": 270
+  },
+  {
+    "id": 2,
+    "title": "Python Tutorial Series",
+    "channel": "Corey Schafer",
+    "url": "https://www.youtube.com/playlist?list=PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU",
+    "topic": "Python",
+    "difficulty": "Beginner",
+    "duration_minutes": 600
+  },
+  {
+    "id": 3,
+    "title": "JavaScript Full Course for Beginners",
+    "channel": "freeCodeCamp.org",
+    "url": "https://www.youtube.com/watch?v=PkZNo7MFNFg",
+    "topic": "JavaScript",
+    "difficulty": "Beginner",
+    "duration_minutes": 195
+  },
+  {
+    "id": 4,
+    "title": "Modern JavaScript From The Beginning",
+    "channel": "Traversy Media",
+    "url": "https://www.youtube.com/watch?v=BI1o2H9z9fo",
+    "topic": "JavaScript",
+    "difficulty": "Beginner",
+    "duration_minutes": 390
+  },
+  {
+    "id": 5,
+    "title": "SQL Tutorial - Full Database Course for Beginners",
+    "channel": "freeCodeCamp.org",
+    "url": "https://www.youtube.com/watch?v=HXV3zeQKqGY",
+    "topic": "Data",
+    "difficulty": "Beginner",
+    "duration_minutes": 260
+  },
+  {
+    "id": 6,
+    "title": "Statistics Fundamentals",
+    "channel": "StatQuest with Josh Starmer",
+    "url": "https://www.youtube.com/playlist?list=PLblh5JKOoLUIxGDQs4LFFD--41Vzf-ME1",
+    "topic": "Data",
+    "difficulty": "Beginner",
+    "duration_minutes": 480
+  },
+  {
+    "id": 7,
+    "title": "Docker Tutorial for Beginners",
+    "channel": "TechWorld with Nana",
+    "url": "https://www.youtube.com/watch?v=3c-iBn73dDE",
+    "topic": "DevOps",
+    "difficulty": "Beginner",
+    "duration_minutes": 120
+  },
+  {
+    "id": 8,
+    "title": "Kubernetes Tutorial for Beginners",
+    "channel": "TechWorld with Nana",
+    "url": "https://www.youtube.com/watch?v=X48VuDVv0do",
+    "topic": "DevOps",
+    "difficulty": "Beginner",
+    "duration_minutes": 240
+  },
+  {
+    "id": 9,
+    "title": "Product Management Full Course",
+    "channel": "Simplilearn",
+    "url": "https://www.youtube.com/watch?v=ZKOL-rZ79gs",
+    "topic": "Product",
+    "difficulty": "Beginner",
+    "duration_minutes": 240
+  }
+]
+

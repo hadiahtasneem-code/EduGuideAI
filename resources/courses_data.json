@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "title": "Python for Everybody (Specialization)",
+    "provider": "Coursera",
+    "url": "https://www.coursera.org/specializations/python",
+    "topic": "Python",
+    "duration_weeks": 8,
+    "cost": 0,
+    "difficulty": "Beginner",
+    "rating": 4.8,
+    "certificate": true
+  },
+  {
+    "id": 2,
+    "title": "Google Data Analytics Professional Certificate",
+    "provider": "Coursera",
+    "url": "https://www.coursera.org/professional-certificates/google-data-analytics",
+    "topic": "Data",
+    "duration_weeks": 16,
+    "cost": 0,
+    "difficulty": "Beginner",
+    "rating": 4.7,
+    "certificate": true
+  },
+  {
+    "id": 3,
+    "title": "CS50's Introduction to Computer Science",
+    "provider": "edX",
+    "url": "https://www.edx.org/learn/computer-science/harvard-university-cs50-s-introduction-to-computer-science",
+    "topic": "General",
+    "duration_weeks": 12,
+    "cost": 0,
+    "difficulty": "Beginner",
+    "rating": 4.8,
+    "certificate": true
+  },
+  {
+    "id": 4,
+    "title": "The Complete JavaScript Course",
+    "provider": "Udemy",
+    "url": "https://www.udemy.com/course/the-complete-javascript-course/",
+    "topic": "JavaScript",
+    "duration_weeks": 8,
+    "cost": 49.99,
+    "difficulty": "Beginner",
+    "rating": 4.8,
+    "certificate": true
+  },
+  {
+    "id": 5,
+    "title": "Introduction to Linux",
+    "provider": "Linux Foundation",
+    "url": "https://www.edx.org/learn/linux/the-linux-foundation-introduction-to-linux",
+    "topic": "DevOps",
+    "duration_weeks": 14,
+    "cost": 0,
+    "difficulty": "Beginner",
+    "rating": 4.6,
+    "certificate": true
+  },
+  {
+    "id": 6,
+    "title": "Product Management Fundamentals",
+    "provider": "Coursera",
+    "url": "https://www.coursera.org/learn/product-management-fundamentals",
+    "topic": "Product",
+    "duration_weeks": 4,
+    "cost": 0,
+    "difficulty": "Beginner",
+    "rating": 4.6,
+    "certificate": true
+  }
+]
+

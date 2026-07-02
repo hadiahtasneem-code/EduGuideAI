@@ -1,0 +1,33 @@
+[
+  {
+    "id": 1,
+    "name": "Beginner Foundations (12 weeks)",
+    "topic": "General",
+    "level": "Beginner",
+    "weeks": 12,
+    "schedule": {
+      "weekly": [
+        "Week 1-2: Fundamentals and setup",
+        "Week 3-4: Core concepts + practice",
+        "Week 5-8: Projects and feedback",
+        "Week 9-12: Portfolio + interview prep"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Data Path Starter (12 weeks)",
+    "topic": "Data",
+    "level": "Beginner",
+    "weeks": 12,
+    "schedule": {
+      "weekly": [
+        "Week 1-2: SQL fundamentals",
+        "Week 3-4: Data cleaning and spreadsheets",
+        "Week 5-8: Visualization + dashboarding",
+        "Week 9-12: Portfolio project + storytelling"
+      ]
+    }
+  }
+]
+

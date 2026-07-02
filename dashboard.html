@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduGuide AI - Dashboard</title>
+    <meta name="description" content="EduGuide AI dashboard with 5 offline agents for career and learning guidance." />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="dashboard">
+    <a class="skip-link" href="#chat">Skip to chat</a>
+
+    <div class="layout">
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar__top">
+          <a class="brand brand--sidebar" href="./index.html" aria-label="Back to landing page">
+            <span class="brand__mark" aria-hidden="true">✦</span>
+            <span class="brand__name">EduGuide AI</span>
+          </a>
+          <p class="sidebar__tagline">Offline multi-agent career guidance</p>
+        </div>
+
+        <nav class="sidebar__nav" aria-label="Agents">
+          <div class="sidebar__section-title">Agents</div>
+          <div class="agent-list" id="agentList"></div>
+        </nav>
+
+        <div class="sidebar__bottom">
+          <button class="btn btn--ghost btn--full" type="button" id="themeToggle" aria-label="Toggle theme">
+            <span class="btn__icon" aria-hidden="true">🌙</span>
+            <span class="btn__text">Theme</span>
+          </button>
+
+          <button class="btn btn--danger btn--full" type="button" id="clearChatBtn">
+            <span class="btn__icon" aria-hidden="true">⚠️</span>
+            <span class="btn__text">Clear chat</span>
+          </button>
+
+          <button class="icon-btn" type="button" id="settingsBtn" aria-label="Settings">
+            ⚙️
+          </button>
+        </div>
+      </aside>
+
+      <div class="main">
+        <header class="main__header">
+          <button class="icon-btn main__menu-btn" type="button" id="menuBtn" aria-label="Open sidebar">
+            ☰
+          </button>
+
+          <div class="agent-header" aria-live="polite">
+            <div class="agent-header__emoji" id="activeAgentEmoji" aria-hidden="true"></div>
+            <div class="agent-header__meta">
+              <div class="agent-header__name" id="activeAgentName"></div>
+              <div class="agent-header__desc" id="activeAgentDesc"></div>
+            </div>
+          </div>
+        </header>
+
+        <main class="chat" id="chat">
+          <div class="chat__box" id="chatBox" role="log" aria-live="polite" aria-relevant="additions"></div>
+
+          <form class="composer" id="composer" autocomplete="off">
+            <input
+              class="composer__input"
+              id="chatInput"
+              type="text"
+              inputmode="text"
+              placeholder="Ask..."
+              aria-label="Message input"
+            />
+            <button class="btn btn--primary composer__send" id="sendBtn" type="submit" aria-label="Send message">
+              <span aria-hidden="true">✈️</span>
+            </button>
+          </form>
+        </main>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="settingsModal" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Settings">
+        <div class="modal__header">
+          <div class="modal__title">Settings</div>
+          <button class="icon-btn" type="button" data-close-modal aria-label="Close settings">✕</button>
+        </div>
+        <div class="modal__body">
+          <label class="field">
+            <span class="field__label">API Key (optional)</span>
+            <input class="field__input" id="apiKeyInput" type="password" placeholder="Not required for offline mode" />
+          </label>
+          <p class="modal__hint">Note: This app works offline. API key is optional.</p>
+        </div>
+        <div class="modal__footer">
+          <button class="btn btn--ghost" type="button" data-close-modal>Close</button>
+          <button class="btn btn--primary" type="button" id="saveSettingsBtn">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="confirmModal" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Clear chat confirmation">
+        <div class="modal__header">
+          <div class="modal__title">Clear chat history?</div>
+          <button class="icon-btn" type="button" data-close-confirm aria-label="Close confirmation">✕</button>
+        </div>
+        <div class="modal__body">
+          <p class="modal__hint">This action cannot be undone.</p>
+        </div>
+        <div class="modal__footer">
+          <button class="btn btn--ghost" type="button" data-close-confirm>Cancel</button>
+          <button class="btn btn--danger" type="button" id="confirmClearBtn">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/utils.js"></script>
+    <script src="./js/agents.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/responses.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

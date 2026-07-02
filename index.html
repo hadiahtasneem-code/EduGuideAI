@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduGuide AI</title>
+    <meta
+      name="description"
+      content="AI-powered career and learning guidance from 5 specialized agents. Runs fully offline with local processing."
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="landing">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="navbar navbar--sticky">
+      <div class="container navbar__inner">
+        <a class="brand" href="./index.html" aria-label="EduGuide AI Home">
+          <span class="brand__mark" aria-hidden="true">✦</span>
+          <span class="brand__name">EduGuide AI</span>
+        </a>
+        <nav class="navbar__actions" aria-label="Primary">
+          <button class="chip" type="button" id="themeToggle" aria-label="Toggle theme">
+            <span class="chip__dot" aria-hidden="true"></span>
+            <span class="chip__text" id="themeLabel">Theme</span>
+          </button>
+          <a class="btn btn--primary" href="/form">Get Started</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class="landing__main">
+      <section class="hero">
+        <div class="hero__bg" aria-hidden="true">
+          <div class="blob blob--a"></div>
+          <div class="blob blob--b"></div>
+          <div class="blob blob--c"></div>
+          <div class="blob blob--d"></div>
+        </div>
+
+        <div class="container hero__inner">
+          <div class="hero__copy reveal">
+            <h1 class="hero__title">EduGuide AI</h1>
+            <p class="hero__subtitle">Your Personal Learning, Upskilling &amp; Career Mentor</p>
+            <div class="hero__cta">
+              <a class="btn btn--primary btn--lg" href="/form">Get Started</a>
+              <a class="btn btn--ghost btn--lg" href="#features">Learn More</a>
+            </div>
+          </div>
+
+          <div class="hero__media reveal" aria-label="Floating hero illustration">
+            <div class="slideshow" data-slideshow>
+              <div class="slideshow__frame">
+                <img class="slideshow__img is-active" alt="Career planning and professional growth" />
+                <img class="slideshow__img" alt="Learning and education" />
+                <img class="slideshow__img" alt="Technology and innovation" />
+                <img class="slideshow__img" alt="Achievement and success" />
+              </div>
+              <div class="slideshow__dots" role="tablist" aria-label="Slideshow navigation">
+                <button class="dot is-active" type="button" aria-label="Slide 1" aria-selected="true"></button>
+                <button class="dot" type="button" aria-label="Slide 2" aria-selected="false"></button>
+                <button class="dot" type="button" aria-label="Slide 3" aria-selected="false"></button>
+                <button class="dot" type="button" aria-label="Slide 4" aria-selected="false"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="section section--tight">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">Everything you need to upskill</h2>
+            <p class="section__subtitle">A premium, interactive learning and career platform powered by multi-agent guidance.</p>
+          </div>
+
+          <div class="cards-grid" aria-label="Feature cards">
+            <article class="card glass-panel hover-lift reveal">
+              <div class="card__icon" aria-hidden="true">💬</div>
+              <h3 class="card__title">AI Tutor</h3>
+              <p class="card__desc">ChatGPT-style learning support with quick actions.</p>
+            </article>
+            <article class="card glass-panel hover-lift reveal">
+              <div class="card__icon" aria-hidden="true">🎯</div>
+              <h3 class="card__title">Learning Gap Analysis</h3>
+              <p class="card__desc">See what to learn next — prioritized by impact.</p>
+            </article>
+            <article class="card glass-panel hover-lift reveal">
+              <div class="card__icon" aria-hidden="true">📅</div>
+              <h3 class="card__title">Study Planner</h3>
+              <p class="card__desc">Weekly roadmaps, milestones, and streak tracking.</p>
+            </article>
+            <article class="card glass-panel hover-lift reveal">
+              <div class="card__icon" aria-hidden="true">🔎</div>
+              <h3 class="card__title">Resource Recommendations</h3>
+              <p class="card__desc">Premium cards with links, difficulty, and badges.</p>
+            </article>
+            <article class="card glass-panel hover-lift reveal">
+              <div class="card__icon" aria-hidden="true">🚀</div>
+              <h3 class="card__title">Career Guidance</h3>
+              <p class="card__desc">Roadmaps, readiness scores, and next-step strategy.</p>
+            </article>
+            <article class="card glass-panel hover-lift reveal">
+              <div class="card__icon" aria-hidden="true">🧠</div>
+              <h3 class="card__title">Quiz Generator</h3>
+              <p class="card__desc">Practice with timers, progress, and feedback.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" class="section">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">How it works (step-by-step)</h2>
+            <p class="section__subtitle">A guided workflow so users always know what to do next.</p>
+          </div>
+
+          <div class="how-grid" aria-label="How it works steps">
+            <article class="how-card glass-panel hover-lift reveal">
+              <div class="how-card__num">Step 1</div>
+              <div class="how-card__title">Profile Agent</div>
+              <div class="how-card__desc">We capture your education level, time, goals, and learning style.</div>
+            </article>
+            <article class="how-card glass-panel hover-lift reveal">
+              <div class="how-card__num">Step 2</div>
+              <div class="how-card__title">Learning Gap Agent</div>
+              <div class="how-card__desc">We identify the highest-impact skills to learn next and prioritize them.</div>
+            </article>
+            <article class="how-card glass-panel hover-lift reveal">
+              <div class="how-card__num">Step 3</div>
+              <div class="how-card__title">Study Planner Agent</div>
+              <div class="how-card__desc">You get a realistic daily/weekly plan with milestones and progress tracking.</div>
+            </article>
+            <article class="how-card glass-panel hover-lift reveal">
+              <div class="how-card__num">Step 4</div>
+              <div class="how-card__title">Resource Agent</div>
+              <div class="how-card__desc">Premium resource cards matched to your level and goal (free/paid options).</div>
+            </article>
+            <article class="how-card glass-panel hover-lift reveal">
+              <div class="how-card__num">Step 5</div>
+              <div class="how-card__title">Career Mentor Agent</div>
+              <div class="how-card__desc">A role roadmap with readiness score and next steps to become industry-ready.</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="stats" class="section section--tight">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">Designed like a premium AI platform</h2>
+            <p class="section__subtitle">Clean dashboards, smooth animations, and guided UX — built for clarity.</p>
+          </div>
+          <div class="stats-grid">
+            <div class="stat glass-panel hover-lift reveal">
+              <div class="stat__value" data-count-to="5">0</div>
+              <div class="stat__label">Specialized Agents</div>
+            </div>
+            <div class="stat glass-panel hover-lift reveal">
+              <div class="stat__value" data-count-to="24">0</div>
+              <div class="stat__label">Weekly Plan (Weeks)</div>
+            </div>
+            <div class="stat glass-panel hover-lift reveal">
+              <div class="stat__value" data-count-to="100">0</div>
+              <div class="stat__label">Light/Dark Polish</div>
+            </div>
+            <div class="stat glass-panel hover-lift reveal">
+              <div class="stat__value" data-count-to="60">0</div>
+              <div class="stat__label">UI Animations</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="stories" class="section">
+        <div class="container">
+          <div class="section__header reveal">
+            <h2 class="section__title">A smoother learning experience</h2>
+            <p class="section__subtitle">Focused steps, less confusion, and clear “next actions”.</p>
+          </div>
+          <div class="testimonials">
+            <article class="quote glass-panel hover-lift reveal">
+              <div class="quote__text">“The step-by-step workflow makes it obvious what to do next. No more overwhelm.”</div>
+              <div class="quote__meta">Student • Guided roadmap</div>
+            </article>
+            <article class="quote glass-panel hover-lift reveal">
+              <div class="quote__text">“The quiz questions match the gaps. It feels like a real product.”</div>
+              <div class="quote__meta">Learner • Skill practice</div>
+            </article>
+            <article class="quote glass-panel hover-lift reveal">
+              <div class="quote__text">“The resources are organized beautifully. I can actually pick what to learn.”</div>
+              <div class="quote__meta">Self-learner • Resource clarity</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--tight">
+        <div class="container">
+          <div class="cta glass-panel reveal">
+            <div class="cta__title">Ready to get a guided learning plan?</div>
+            <div class="cta__sub">Start with your profile — EduGuide AI will walk you through each step.</div>
+            <div class="cta__actions">
+              <a class="btn btn--primary btn--lg" href="/form">Get Started</a>
+              <a class="btn btn--ghost btn--lg" href="#how">See the steps</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__inner">
+        <div class="footer-links">
+          <a class="footer__link" href="#" aria-label="About">About</a>
+          <a class="footer__link" href="#" aria-label="Contact">Contact</a>
+          <a class="footer__link" href="#" aria-label="Privacy Policy">Privacy Policy</a>
+          <a class="footer__link" href="#" aria-label="Terms of Service">Terms of Service</a>
+          <a class="footer__link" href="#" aria-label="Feedback">Feedback</a>
+          <a class="footer__link" href="#" aria-label="Accessibility">Accessibility</a>
+          <span class="footer__meta">© <span id="year"></span> EduGuide AI</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="./js/landing.js"></script>
+  </body>
+</html>

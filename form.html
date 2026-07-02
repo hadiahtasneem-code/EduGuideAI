@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduGuide AI - Profile Form</title>
+    <meta name="description" content="Build your profile with dropdowns and generate a multi-agent analysis." />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body class="flow page-fade">
+    <a class="skip-link" href="#content">Skip to content</a>
+
+    <div class="app-shell">
+      <aside class="app-sidebar" id="sidebar" aria-label="Sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-brand">
+            <div class="brand-badge" aria-hidden="true">✦</div>
+            <div class="brand-meta">
+              <div class="brand-title">EduGuide AI</div>
+              <div class="brand-subtitle">Multi-Agent Learning Platform</div>
+            </div>
+          </div>
+
+          <nav class="sidebar-nav" aria-label="Navigation">
+            <button class="nav-item is-active" type="button" data-route="dashboard">
+              <span class="nav-icon" aria-hidden="true">🏠</span>
+              <span>
+                <span class="nav-label">Dashboard</span>
+                <span class="nav-hint">Overview &amp; streaks</span>
+              </span>
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+            <button class="nav-item" type="button" data-route="tutor">
+              <span class="nav-icon" aria-hidden="true">💬</span>
+              <span>
+                <span class="nav-label">AI Tutor</span>
+                <span class="nav-hint">Chat + quick actions</span>
+              </span>
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+            <button class="nav-item" type="button" data-route="analysis">
+              <span class="nav-icon" aria-hidden="true">🧩</span>
+              <span>
+                <span class="nav-label">Learning Analysis</span>
+                <span class="nav-hint">Profile + gap insights</span>
+              </span>
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+            <button class="nav-item" type="button" data-route="planner">
+              <span class="nav-icon" aria-hidden="true">📅</span>
+              <span>
+                <span class="nav-label">Study Planner</span>
+                <span class="nav-hint">Weekly roadmap</span>
+              </span>
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+            <button class="nav-item" type="button" data-route="resources">
+              <span class="nav-icon" aria-hidden="true">🔎</span>
+              <span>
+                <span class="nav-label">Resources</span>
+                <span class="nav-hint">Curated learning cards</span>
+              </span>
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+            <button class="nav-item" type="button" data-route="career">
+              <span class="nav-icon" aria-hidden="true">🚀</span>
+              <span>
+                <span class="nav-label">Career Mentor</span>
+                <span class="nav-hint">Roadmap &amp; readiness</span>
+              </span>
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+            <button class="nav-item" type="button" data-route="quiz">
+              <span class="nav-icon" aria-hidden="true">🧠</span>
+              <span>
+                <span class="nav-label">Quiz</span>
+                <span class="nav-hint">Timed practice</span>
+              </span>
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+            <button class="nav-item" type="button" data-route="profile">
+              <span class="nav-icon" aria-hidden="true">👤</span>
+              <span>
+                <span class="nav-label">Profile</span>
+                <span class="nav-hint">Edit your details</span>
+              </span>
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+            <button class="nav-item" type="button" data-route="settings">
+              <span class="nav-icon" aria-hidden="true">⚙️</span>
+              <span>
+                <span class="nav-label">Settings</span>
+                <span class="nav-hint">Preferences</span>
+              </span>
+              <span class="nav-chevron" aria-hidden="true">›</span>
+            </button>
+          </nav>
+
+          <div class="sidebar-footer">
+            <div class="sidebar-row">
+              <button class="chip" type="button" id="themeToggle" aria-label="Toggle theme">
+                <span class="chip__dot" aria-hidden="true"></span>
+                <span class="chip__text" id="themeLabel">Theme</span>
+              </button>
+              <button class="icon-btn" type="button" id="sidebarClose" aria-label="Close sidebar">✕</button>
+            </div>
+            <button class="chip" type="button" id="authChip" aria-label="Open authentication">
+              <span class="chip__dot" aria-hidden="true"></span>
+              <span class="chip__text" id="authLabel">Sign in</span>
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="app-main">
+        <header class="app-topbar">
+          <div class="topbar-left">
+            <button class="icon-btn" type="button" id="sidebarToggle" aria-label="Open menu">☰</button>
+            <div>
+              <div class="page-title" id="pageKicker">Workspace</div>
+              <div class="page-headline" id="pageHeadline">Dashboard</div>
+            </div>
+          </div>
+          <div class="topbar-actions">
+            <div class="search" role="search">
+              <span class="search__icon" aria-hidden="true">⌕</span>
+              <input class="search__input" id="globalSearch" type="text" placeholder="Search topics, skills, resources..." />
+            </div>
+          </div>
+        </header>
+
+        <main class="app-content" id="content">
+          <section class="guided glass-panel" id="guidedBar" aria-label="Guided workflow"></section>
+          <section class="page is-active" data-page="dashboard">
+            <div class="grid-4">
+              <div class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Learning Progress</div>
+                    <div class="widget__value" data-counter="progress">0%</div>
+                  </div>
+                  <div class="ring" id="ringProgress" style="--p: 0">
+                    <div class="ring__inner"></div>
+                  </div>
+                </div>
+                <div class="widget__meta">Your overall progress based on recent analysis.</div>
+              </div>
+              <div class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Study Streak</div>
+                    <div class="widget__value" data-counter="streak">0</div>
+                  </div>
+                  <div class="ring" id="ringStreak" style="--p: 0">
+                    <div class="ring__inner"></div>
+                  </div>
+                </div>
+                <div class="widget__meta">Keep it going — streaks build momentum.</div>
+              </div>
+              <div class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Quiz Accuracy</div>
+                    <div class="widget__value" data-counter="accuracy">0%</div>
+                  </div>
+                  <div class="ring" id="ringAccuracy" style="--p: 0">
+                    <div class="ring__inner"></div>
+                  </div>
+                </div>
+                <div class="widget__meta">Based on your recent quizzes (session).</div>
+              </div>
+              <div class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Career Readiness</div>
+                    <div class="widget__value" data-counter="readiness">0%</div>
+                  </div>
+                  <div class="ring" id="ringReadiness" style="--p: 0">
+                    <div class="ring__inner"></div>
+                  </div>
+                </div>
+                <div class="widget__meta">A directional score for your target role.</div>
+              </div>
+            </div>
+
+            <div class="grid-2">
+              <div class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Weekly Learning Overview</div>
+                    <div class="widget__meta">A lightweight trend view (session).</div>
+                  </div>
+                  <div class="status-pill"><span class="pulse" aria-hidden="true"></span> Live</div>
+                </div>
+                <div style="margin-top: 14px">
+                  <div class="progress" aria-label="Weekly goal progress">
+                    <div class="progress__fill" id="weeklyBar"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Quick Actions</div>
+                    <div class="widget__meta">Jump into the next best step.</div>
+                  </div>
+                </div>
+                <div class="actions-row" style="margin-top: 14px">
+                  <button class="btn btn--primary" type="button" data-action="goTutor">Ask AI Tutor</button>
+                  <button class="btn btn--soft" type="button" data-action="goAnalysis">Run Analysis</button>
+                  <button class="btn btn--soft" type="button" data-action="goPlan">Generate Study Plan</button>
+                  <button class="btn btn--soft" type="button" data-action="goQuiz">Start Quiz</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="widget hover-lift">
+              <div class="widget__top">
+                <div>
+                  <div class="widget__label">Agent Workflow</div>
+                  <div class="widget__meta">A visual pipeline from profile to career roadmap.</div>
+                </div>
+              </div>
+              <div class="agent-flow" id="agentFlow" style="margin-top: 14px"></div>
+            </div>
+          </section>
+
+          <section class="page" data-page="tutor">
+            <div class="widget hover-lift chat-shell">
+              <div class="chat-toolbar" aria-label="Tutor quick actions">
+                <button class="quick-btn" type="button" data-quick="eli10">Explain Like I’m 10</button>
+                <button class="quick-btn" type="button" data-quick="simplify">Simplify</button>
+                <button class="quick-btn" type="button" data-quick="example">Give Example</button>
+                <button class="quick-btn" type="button" data-quick="real">Real World Example</button>
+                <button class="quick-btn" type="button" data-quick="notes">Generate Notes</button>
+                <button class="quick-btn" type="button" data-quick="flashcards">Generate Flashcards</button>
+                <button class="quick-btn" type="button" data-quick="quiz">Generate Quiz</button>
+              </div>
+
+              <div class="suggestions" id="tutorSuggestions" aria-label="Suggested questions"></div>
+
+              <div class="chat-box" id="tutorChat" aria-label="AI Tutor chat history"></div>
+
+              <div class="composer-row">
+                <input class="input" id="tutorInput" type="text" placeholder="Ask EduGuide AI Tutor..." />
+                <button class="btn btn--primary" type="button" id="tutorSend">Send</button>
+              </div>
+            </div>
+          </section>
+
+          <section class="page" data-page="analysis">
+            <div class="grid-2">
+              <section class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Profile Setup</div>
+                    <div class="widget__meta">Dropdown-only onboarding (optional custom role).</div>
+                  </div>
+                </div>
+
+                <form id="profileForm" class="profile-form" novalidate style="margin-top: 14px">
+                  <div class="form-grid">
+                    <label class="field">
+                      <span class="field__label">Current Education Level *</span>
+                      <select class="field__select" id="educationLevel" name="education_level" required>
+                        <option value="">-- Select --</option>
+                        <option value="high_school">High School</option>
+                        <option value="bachelors">Bachelor's</option>
+                        <option value="masters">Master's</option>
+                        <option value="professional">Professional</option>
+                        <option value="self_learning">Self-Learning</option>
+                      </select>
+                    </label>
+
+                    <label class="field">
+                      <span class="field__label">Field of Interest *</span>
+                      <select class="field__select" id="fieldOfInterest" name="field_of_interest" required>
+                        <option value="">-- Select --</option>
+                        <option value="technology">Technology/IT</option>
+                        <option value="business">Business/Finance</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="creative">Creative/Arts</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="data_science">Data Science</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </label>
+
+                    <div class="field">
+                      <span class="field__label">Target Role/Goal *</span>
+                      <select class="field__select" id="targetRole" name="target_role_select" required>
+                        <option value="">-- Select --</option>
+                        <option value="software_engineer">Software Engineer</option>
+                        <option value="data_scientist">Data Scientist</option>
+                        <option value="product_manager">Product Manager</option>
+                        <option value="frontend_dev">Frontend Developer</option>
+                        <option value="backend_dev">Backend Developer</option>
+                        <option value="devops">DevOps Engineer</option>
+                        <option value="ml_engineer">Machine Learning Engineer</option>
+                        <option value="business_analyst">Business Analyst</option>
+                        <option value="custom">Custom Input</option>
+                      </select>
+                      <input class="field__input field__input--mt is-hidden" id="customRole" type="text" placeholder="Type your target role" />
+                      <input type="hidden" id="targetRoleValue" name="target_role" />
+                    </div>
+
+                    <label class="field">
+                      <span class="field__label">Hours Available Per Week *</span>
+                      <select class="field__select" id="availableHours" name="available_hours" required>
+                        <option value="">-- Select --</option>
+                        <option value="7.5">5–10 hours/week</option>
+                        <option value="15">10–20 hours/week</option>
+                        <option value="25">20–30 hours/week</option>
+                        <option value="35">30+ hours/week</option>
+                      </select>
+                    </label>
+
+                    <label class="field">
+                      <span class="field__label">Your Learning Style *</span>
+                      <select class="field__select" id="learningStyle" name="learning_style" required>
+                        <option value="">-- Select --</option>
+                        <option value="visual">Visual (videos, diagrams)</option>
+                        <option value="auditory">Auditory (lectures, podcasts)</option>
+                        <option value="reading_writing">Reading/Writing (books, articles)</option>
+                        <option value="hands_on">Hands-on (projects, practice)</option>
+                        <option value="mixed">Mixed</option>
+                      </select>
+                    </label>
+
+                    <label class="field">
+                      <span class="field__label">Current Experience Level *</span>
+                      <select class="field__select" id="experienceLevel" name="experience_level" required>
+                        <option value="">-- Select --</option>
+                        <option value="complete_beginner">Complete Beginner</option>
+                        <option value="some_knowledge">Some Knowledge</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                        <option value="expert">Expert</option>
+                      </select>
+                    </label>
+
+                    <label class="field">
+                      <span class="field__label">Career Timeline *</span>
+                      <select class="field__select" id="careerTimeline" name="career_timeline" required>
+                        <option value="">-- Select --</option>
+                        <option value="3 months">3 months</option>
+                        <option value="6 months">6 months</option>
+                        <option value="1 year">1 year</option>
+                        <option value="2 years">2+ years</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <fieldset class="fieldset" style="margin-top: 12px">
+                    <legend class="fieldset__legend">Preferred Resource Types *</legend>
+                    <div class="checkbox-grid">
+                      <label class="check"><input type="checkbox" name="preferred_resources" value="youtube" /><span>📺 YouTube Videos</span></label>
+                      <label class="check"><input type="checkbox" name="preferred_resources" value="courses" /><span>🎓 Online Courses</span></label>
+                      <label class="check"><input type="checkbox" name="preferred_resources" value="books" /><span>📚 Books</span></label>
+                      <label class="check"><input type="checkbox" name="preferred_resources" value="projects" /><span>💻 Project-based Learning</span></label>
+                      <label class="check"><input type="checkbox" name="preferred_resources" value="certifications" /><span>🏆 Certifications</span></label>
+                      <label class="check"><input type="checkbox" name="preferred_resources" value="podcasts" /><span>🎧 Podcasts</span></label>
+                    </div>
+                  </fieldset>
+
+                  <div class="form-actions" style="margin-top: 12px">
+                    <button class="btn btn--soft" type="reset">Clear</button>
+                    <button class="btn btn--primary" type="submit">Analyze</button>
+                  </div>
+
+                  <div class="form-error" id="formError" role="alert" aria-live="polite"></div>
+                </form>
+              </section>
+
+              <section class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Analysis Summary</div>
+                    <div class="widget__meta">A clean, readable snapshot of your profile and priorities.</div>
+                  </div>
+                </div>
+                <div id="analysisSummary" style="margin-top: 14px"></div>
+              </section>
+            </div>
+          </section>
+
+          <section class="page" data-page="planner">
+            <div class="grid-2">
+              <section class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Planner</div>
+                    <div class="widget__meta">Daily checklists and weekly milestones.</div>
+                  </div>
+                </div>
+                <div id="plannerContent" style="margin-top: 14px"></div>
+              </section>
+              <section class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Goal Completion</div>
+                    <div class="widget__meta">Progress tracking within this session.</div>
+                  </div>
+                </div>
+                <div style="margin-top: 14px">
+                  <div class="progress">
+                    <div class="progress__fill" id="planProgressFill"></div>
+                  </div>
+                  <div class="widget__meta" id="planProgressMeta" style="margin-top: 10px"></div>
+                </div>
+                <div class="actions-row" style="margin-top: 14px">
+                  <button class="btn btn--soft" type="button" id="exportTxtBtn">Export TXT</button>
+                  <button class="btn btn--soft" type="button" id="exportPdfBtn">Export PDF</button>
+                  <button class="btn btn--primary" type="button" id="exportIcsBtn">Export ICS</button>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <section class="page" data-page="resources">
+            <section class="widget hover-lift">
+              <div class="widget__top">
+                <div>
+                  <div class="widget__label">Recommendations</div>
+                  <div class="widget__meta">Saved as premium cards with filters and badges.</div>
+                </div>
+              </div>
+              <div id="resourcesContent" style="margin-top: 14px"></div>
+            </section>
+          </section>
+
+          <section class="page" data-page="career">
+            <div class="grid-2">
+              <section class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Career Readiness</div>
+                    <div class="widget__meta">A directional, role-aware view.</div>
+                  </div>
+                </div>
+                <div style="margin-top: 14px">
+                  <div class="progress" aria-label="Career readiness bar">
+                    <div class="progress__fill" id="careerProgressFill"></div>
+                  </div>
+                  <div class="widget__meta" id="careerProgressMeta" style="margin-top: 10px"></div>
+                </div>
+              </section>
+              <section class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Roadmap</div>
+                    <div class="widget__meta">Expand each stage smoothly.</div>
+                  </div>
+                </div>
+                <div id="careerContent" style="margin-top: 14px"></div>
+              </section>
+            </div>
+          </section>
+
+          <section class="page" data-page="quiz">
+            <div class="grid-2">
+              <section class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Quiz</div>
+                    <div class="widget__meta">A modern practice interface with timer and navigation.</div>
+                  </div>
+                </div>
+                <div id="quizShell" style="margin-top: 14px"></div>
+              </section>
+              <section class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Performance</div>
+                    <div class="widget__meta">Accuracy and topic feedback.</div>
+                  </div>
+                </div>
+                <div id="quizStats" style="margin-top: 14px"></div>
+              </section>
+            </div>
+          </section>
+
+          <section class="page" data-page="profile">
+            <section class="widget hover-lift">
+              <div class="widget__top">
+                <div>
+                  <div class="widget__label">Profile</div>
+                  <div class="widget__meta">UI-only profile editor (session).</div>
+                </div>
+              </div>
+              <div id="profileEditor" style="margin-top: 14px"></div>
+            </section>
+          </section>
+
+          <section class="page" data-page="settings">
+            <div class="grid-2">
+              <section class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Appearance</div>
+                    <div class="widget__meta">Light/dark and defaults.</div>
+                  </div>
+                </div>
+                <div id="settingsAppearance" style="margin-top: 14px"></div>
+              </section>
+              <section class="widget hover-lift">
+                <div class="widget__top">
+                  <div>
+                    <div class="widget__label">Account</div>
+                    <div class="widget__meta">UI-only settings panels.</div>
+                  </div>
+                </div>
+                <div id="settingsAccount" style="margin-top: 14px"></div>
+              </section>
+            </div>
+          </section>
+        </main>
+
+        <footer class="app-footer">
+          <div class="footer-links">
+            <span>© EduGuide AI</span>
+            <span style="display: inline-flex; gap: 14px; flex-wrap: wrap">
+              <a href="#" aria-label="About">About</a>
+              <a href="#" aria-label="Contact">Contact</a>
+              <a href="#" aria-label="Privacy Policy">Privacy Policy</a>
+              <a href="#" aria-label="Terms of Service">Terms of Service</a>
+              <a href="#" aria-label="Feedback">Feedback</a>
+              <a href="#" aria-label="Accessibility">Accessibility</a>
+            </span>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div class="overlay" id="loadingOverlay" aria-hidden="true">
+      <div class="overlay-card" role="dialog" aria-modal="true" aria-label="Analyzing">
+        <div class="overlay-title">Running multi-agent analysis</div>
+        <div class="overlay-sub">Sit tight — building your profile, gaps, plan, resources, and roadmap.</div>
+        <div class="overlay-grid">
+          <div class="skeleton-card">
+            <div class="skeleton skeleton-line" style="width: 58%"></div>
+            <div class="skeleton skeleton-line" style="width: 92%"></div>
+            <div class="skeleton skeleton-line" style="width: 78%"></div>
+            <div class="skeleton skeleton-line" style="width: 64%"></div>
+            <div class="skeleton skeleton-line" style="width: 84%"></div>
+          </div>
+          <div class="skeleton-card">
+            <div class="agent-flow" id="agentOverlayFlow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay" id="authOverlay" aria-hidden="true">
+      <div class="overlay-card" role="dialog" aria-modal="true" aria-label="Authentication">
+        <div class="overlay-title" id="authTitle">Login</div>
+        <div class="overlay-sub" id="authSub">UI-only authentication experience.</div>
+        <div class="overlay-grid" style="grid-template-columns: 1fr">
+          <div class="skeleton-card" style="background: rgba(255, 255, 255, 0.10)">
+            <div class="actions-row" style="justify-content: space-between; margin-bottom: 12px">
+              <button class="quick-btn" type="button" id="authTabLogin">Login</button>
+              <button class="quick-btn" type="button" id="authTabSignup">Create Account</button>
+              <button class="icon-btn" type="button" id="authClose" aria-label="Close">✕</button>
+            </div>
+
+            <form id="loginForm" class="profile-form">
+              <div class="grid-2">
+                <label class="field">
+                  <span class="field__label">Gmail Address</span>
+                  <input class="input" type="email" name="email" placeholder="name@gmail.com" required />
+                </label>
+                <label class="field">
+                  <span class="field__label">Password</span>
+                  <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center">
+                    <input class="input" id="loginPassword" type="password" name="password" placeholder="••••••••" required />
+                    <button class="mini" type="button" id="toggleLoginPw">Show</button>
+                  </div>
+                </label>
+              </div>
+              <div class="actions-row" style="justify-content: space-between; margin-top: 10px">
+                <label style="display: inline-flex; gap: 10px; align-items: center">
+                  <input type="checkbox" id="rememberMe" />
+                  <span style="font-weight: 800">Remember me</span>
+                </label>
+                <button class="mini" type="button" id="forgotPw">Forgot password</button>
+              </div>
+              <div class="actions-row" style="margin-top: 12px">
+                <button class="btn btn--primary" type="submit">Login</button>
+                <button class="btn btn--soft" type="button" id="googleLogin">Continue with Google</button>
+              </div>
+              <div class="form-error" id="loginError" role="alert"></div>
+            </form>
+
+            <form id="signupForm" class="profile-form is-hidden">
+              <div class="grid-2">
+                <label class="field">
+                  <span class="field__label">Full Name</span>
+                  <input class="input" type="text" name="name" placeholder="Your name" required />
+                </label>
+                <label class="field">
+                  <span class="field__label">Gmail Address</span>
+                  <input class="input" type="email" name="email" placeholder="name@gmail.com" required />
+                </label>
+              </div>
+
+              <div class="grid-2" style="margin-top: 10px">
+                <label class="field">
+                  <span class="field__label">Password</span>
+                  <div style="display: grid; grid-template-columns: 1fr auto; gap: 10px; align-items: center">
+                    <input class="input" id="signupPassword" type="password" name="password" placeholder="Create a password" required />
+                    <button class="mini" type="button" id="toggleSignupPw">Show</button>
+                  </div>
+                  <div class="progress" style="margin-top: 10px"><div class="progress__fill" id="pwStrengthFill"></div></div>
+                </label>
+                <label class="field">
+                  <span class="field__label">Confirm Password</span>
+                  <input class="input" id="signupConfirm" type="password" name="confirm" placeholder="Confirm password" required />
+                </label>
+              </div>
+              <div class="actions-row" style="margin-top: 12px">
+                <button class="btn btn--primary" type="submit">Create Account</button>
+                <button class="btn btn--soft" type="button" id="googleSignup">Continue with Google</button>
+              </div>
+              <div class="form-error" id="signupError" role="alert"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/agents.js"></script>
+    <script src="./js/responses.js"></script>
+    <script src="./js/form.js"></script>
+  </body>
+</html>
